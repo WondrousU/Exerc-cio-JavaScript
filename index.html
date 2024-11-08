@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Calculadora IMC </title>
+</head>
+<body>
+
+    <div id="topheader">
+    <header>
+        <h3>IMC Explicado e Calculadora</h3>
+
+        <nav>
+            <ul>
+                <li><a href="#descricao">Sobre IMC</a></li>
+                <li><a href="#comocalcular">Como Calcular</a></li>
+                <li><a href="#problemas">Alerta Sobre o IMC</a></li>
+            </ul>
+        </nav>
+    </header>
+    </div>
+
+    <div id="calculadora">
+
+    <h1> Calcule Índice de Massa Corporal </h1>
+
+    <!--<form action="#">-->
+        <label for="altura"> Altura: </label>
+        <input type="number" name="altura" id="altura">
+        
+        <label for="peso"> Peso (kg): </label>
+        <input type="number" name="peso" id="peso">
+
+        <button id="botaocalc" onclick="calcImc()"> Calcular IMC </button>
+
+        <div id="resultado">
+        <p> Seu índice de massa corporal é: <span id="resultado"></span></p>
+        </div>
+
+        <div id="conteudo">
+            <h2 id="descricao"> Descrição Sobre IMC </h2>
+
+            <p class="texto">O Índice de Massa Corporal (IMC) é uma ferramenta amplamente utilizada para avaliar se o peso de uma pessoa está dentro de uma faixa saudável, levando em consideração sua altura. É um indicador simples e fácil de calcular, <b>mas não reflete diretamente a composição corporal, como a quantidade de gordura ou massa muscular.</b> Por isso, ele é mais utilizado como um ponto de partida para identificar possíveis problemas relacionados ao peso, sendo importante considerar outros fatores na avaliação da saúde.</p>
+
+            <h2 id="comocalcular"> Como Calcular o IMC </h2>
+
+            <p class="texto">Para determinar o IMC, primeiro é preciso medir o peso em quilogramas e a altura em metros. A altura é então elevada ao quadrado (multiplicando-a por ela mesma). Em seguida, o peso da pessoa é dividido pelo resultado obtido da altura ao quadrado. O valor final desse cálculo indica o IMC, que pode ser comparado a faixas específicas para avaliar se o peso está dentro de uma faixa saudável ou se há risco de problemas relacionados ao peso.</p>
+
+            <h2 id="problemas"> Problemas do IMC </h2>
+
+            <p class="texto">Embora o IMC seja uma ferramenta útil para uma avaliação inicial do peso, ele possui algumas limitações importantes. O principal problema é que ele não leva em consideração a composição corporal. Isso significa que duas pessoas com o mesmo IMC podem ter diferentes proporções de gordura e massa muscular. Por exemplo, atletas musculosos podem ter um IMC elevado, mas isso não significa que tenham excesso de gordura ou estejam em risco de doenças relacionadas à obesidade. Além disso, o IMC não considera a distribuição de gordura no corpo, um fator importante para determinar o risco de doenças cardiovasculares e metabólicas.</p>
+
+            <img src="https://16c6bcdd4f.clvaw-cdnwnd.com/153ff6a561e463a6d74037544c38a919/200000069-3639436397/imc.png?ph=16c6bcdd4f" alt="Tabela IMC">
+        </div>
+
+    <!--</form>-->
+
+    <script>
+        function calcImc(){
+            const altura = parseFloat(document.getElementById("altura").value);
+            const peso = parseFloat(document.getElementById("peso").value);
+
+            const resultado = peso / (altura**2)
+
+            document.getElementById("resultado").textContent = resultado.toFixed(2)
+        }
+    </script>
+
+  <footer> Site Informativo IMC 2024</footer>
+
+
+    
+</body>
+</html>
